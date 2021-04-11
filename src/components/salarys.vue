@@ -1,6 +1,6 @@
 <template>
     <div id="app" style="text-align: center;width: 90%; margin: auto">
-
+        <h1 style="margin-bottom: 20px">后端开发薪资区间</h1>
         <div id="main" style="width: 900px;height:600px;margin:0 auto;margin-left: 26%">
             <!--<h3>技能树</h3>-->
         </div>

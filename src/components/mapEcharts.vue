@@ -6,7 +6,7 @@
     <div id="app">
         <!--<div id="main" ></div>-->
         <!--<div class="echarts">-->
-        <h1 style="text-align: center;margin-top: -40px;margin-bottom: 20px">后端开发招聘信息</h1>
+        <h1 style="text-align: center;margin-top: -40px;margin-bottom: 20px">后端开发招聘岗位分布</h1>
         <div id="main" :style="{height:'600px',width:'100%'}" ref="myEchart"></div>
         <!--</div>-->
     </div>
