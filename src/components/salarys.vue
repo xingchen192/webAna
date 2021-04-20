@@ -57,7 +57,6 @@
 // 图表option整理
         chartData.forEach((v, i) => {
           pieSeries.push({
-            name: '学历',
             type: 'pie',
             clockWise: false,
             hoverAnimation: false,
@@ -117,6 +116,13 @@
         })
 
         let option = {
+          tooltip: {
+            show: true,
+            position: 'top',
+            textStyle: {
+              fontSize: 20
+            }
+          },
           backgroundColor: '#fff',
           color: color,
           grid: {

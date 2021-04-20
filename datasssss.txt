@@ -1,0 +1,79 @@
+      // let data = [
+        //   {
+        //     name: '技术类',
+        //     itemStyle: {
+        //       color: colors[1]
+        //     },
+        //     children: [{
+        //       name: '前端开发',
+        //       children: [{
+        //         name: '5☆',
+        //         children: [
+        //           {
+        //             name: '前端开发'
+        //           }, {
+        //             name: 'ios开发'
+        //           }, {
+        //             name: 'android开发',
+        //           }]
+        //       }],
+        //       {
+        //         name: '后端开发',
+        //         children: [{
+        //           name: '5☆',
+        //           children: [
+        //             {
+        //               name: 'java开发',
+        //             }, {
+        //               name: 'Java web',
+        //             }, {
+        //               name: 'php开发',
+        //             }, {
+        //               name: '软件研发',
+        //             }, {
+        //               name: '全栈工程师',
+        //             }]
+        //         }], {
+        //         name: '运维类',
+        //         children: [
+        //           {
+        //             name: '5☆', children: [
+        //               {
+        //                 name: '计算机运营维护'
+        //               }, {
+        //                 name: '服务器运维'
+        //               }]
+        //           }], {
+        //         name: '算法',
+        //         children: [{
+        //           name: '算法研发工程师'
+        //         },]
+        //       }, {
+        //         name: '测试类',
+        //         children: [
+        //           {
+        //             name: '5☆', children: [{
+        //               name: '测试岗位'
+        //             }, {
+        //               name: '软件测试'
+        //             }]
+        //           }], {
+        //         name: '数据分析类',
+        //         children: [
+        //           {
+        //             name: '5☆', children: [{
+        //               name: '商业分析助理'
+        //             }, {
+        //               name: '大数据应用助理'
+        //             }]
+        //           }]
+        //       }], {
+        //     name: '非技术类',
+        //     itemStyle: {
+        //       color: colors[2]
+        //     },
+        //     children: [{
+        //       name: '剧情策划实习生'
+        //     }]
+        //
+        //   }]

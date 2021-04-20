@@ -19,9 +19,11 @@ import webWordCloud from '../components/webWordCloud'
 import pythonWordCloud from '../components/pythonWordCloud'
 import networkWordCloud from '../components/networkWordCloud'
 import salarys from '../components/salarys'
-// import app from '../App'
+import stuDistribution from '../components/stuDistribution'
+import stuIntention from '../components/stuIntention'
 import mainBody from '../components/mainBody'
 import assessPro from '../components/assessPro'
+import jobUpload from '../components/jobDataUpload'
 
 Vue.use(VueRouter)
 
@@ -35,7 +37,7 @@ const routes = [
     path: '/',
     name: 'login',
     component: login,
-  },{
+  }, {
     path: '/logon',
     name: 'logon',
     component: logon,
@@ -47,6 +49,10 @@ const routes = [
       path: '/',
       name: 'mainContent',
       component: mainContent
+    }, {
+      path: '/jobUpload',
+      name: 'jobUpload',
+      component: jobUpload
     },
       {
         path: '/mainMap',
@@ -113,6 +119,14 @@ const routes = [
         path: '/assessPro',
         name: 'assessPro',
         component: assessPro
+      }, {
+        path: '/stuIntention',
+        name: 'stuIntention',
+        component: stuIntention
+      }, {
+        path: '/stuDistribution',
+        name: 'stuDistribution',
+        component: stuDistribution
       }]
   },
 

@@ -38,6 +38,7 @@
                                         <!--<el-menu-item index="2-4-7">网络工程师</el-menu-item>-->
                                     </el-submenu>
                                     <el-menu-item index="2-3">招聘对比</el-menu-item>
+                                    <el-menu-item index="2-5">数据上传</el-menu-item>
                                 </el-submenu>
                             </div>
                         </el-col>
@@ -46,9 +47,10 @@
 
                                 <el-submenu index="3">
                                     <template slot="title"><span style="font-size: 18px;">简历分析</span></template>
-                                    <el-menu-item index="3-1">学生自我评价</el-menu-item>
-                                    <el-menu-item index="3-2">学生技能树</el-menu-item>
-                                    <!--<el-menu-item index="3-3">选项3</el-menu-item>-->
+                                    <el-menu-item index="3-1">求职者自我评价</el-menu-item>
+                                    <el-menu-item index="3-2">求职者技能树</el-menu-item>
+                                    <el-menu-item index="3-3">求职者分布</el-menu-item>
+                                    <el-menu-item index="3-4">求职者意向职位</el-menu-item>
                                     <!--<el-submenu index="3-4">-->
                                     <!--<template slot="title">选项4</template>-->
                                     <!--<el-menu-item index="3-4-1">选项1</el-menu-item>-->
@@ -85,10 +87,10 @@
             <!--<el-main>-->
 
 
-                <!--<div id="main-port">-->
+            <!--<div id="main-port">-->
 
 
-                <!--</div>-->
+            <!--</div>-->
             <!--</el-main>-->
         </el-container>
 
@@ -130,6 +132,16 @@
           case '3-2':
             this.$router.push({
               path: '/skill_tree'
+            })
+            break
+          case '3-3':
+            this.$router.push({
+              path: '/stuDistribution'
+            })
+            break
+          case '3-4':
+            this.$router.push({
+              path: '/stuIntention'
             })
             break
           case '2-1':
@@ -177,6 +189,11 @@
               path: '/safaris'
             })
             break
+          case '2-5':
+            this.$router.push({
+              path:'/jobUpload'
+            })
+            break
           case '4-2':
             this.$router.push({
               path: '/infoPost'
@@ -187,7 +204,6 @@
               path: '/assessPro'
             })
             break
-
 
         }
       },

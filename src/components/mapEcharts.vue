@@ -19,68 +19,90 @@
   // import Cookies from 'js-ookie'
   export default {
     name: 'mapEcharts',
+    data () {
+      return {
+        mapData: []
+      }
+    },
     methods: {
-      chinaConfigure () {
-        this.mapData = [
-          {'name': '昆明', 'value': 2},
-          {'name': '石家庄', 'value': 10},
-          {'name': '宁波', 'value': 13},
-          {'name': '运城', 'value': 3},
-          {'name': '西安', 'value': 29},
-          {'name': '登封市', 'value': 3},
-          {'name': '重庆', 'value': 3},
-          {'name': '长沙', 'value': 18},
-          {'name': '保定', 'value': 4},
-          {'name': '张家口', 'value': 3},
-          {'name': '桂林', 'value': 2},
-          {'name': '泉州', 'value': 6},
-          {'name': '秦皇岛', 'value': 2},
-          {'name': '广州', 'value': 23},
-          {'name': '济南', 'value': 10},
-          {'name': '许昌', 'value': 2},
-          {'name': '潍坊', 'value': 1},
-          {'name': '廊坊', 'value': 5},
-          {'name': '乌兰察布', 'value': 1},
-          {'name': '邯郸', 'value': 2},
-          {'name': '惠州', 'value': 2},
-          {'name': '哈尔滨', 'value': 3},
-          {'name': '大连', 'value': 56},
-          {'name': '开封', 'value': 1},
-          {'name': '北京', 'value': 11174},
-          {'name': '太原', 'value': 6},
-          {'name': '上海', 'value': 86},
-          {'name': '聊城', 'value': 1},
-          {'name': '平顶山', 'value': 4},
-          {'name': '杭州', 'value': 16},
-          {'name': '南京', 'value': 18},
-          {'name': '郑州', 'value': 2},
-          {'name': '深圳', 'value': 47},
-          {'name': '马鞍山', 'value': 1},
-          {'name': '南充', 'value': 2},
-          {'name': '唐山', 'value': 4},
-          {'name': '无锡', 'value': 8},
-          {'name': '郴州', 'value': 3},
-          {'name': '安阳', 'value': 1},
-          {'name': '锦州', 'value': 1},
-          {'name': '合肥', 'value': 9},
-          {'name': '武汉', 'value': 27},
-          {'name': '贵阳', 'value': 2},
-          {'name': '青岛', 'value': 7},
-          {'name': '成都', 'value': 32},
-          {'name': '柳州', 'value': 2},
-          {'name': '温州', 'value': 1},
-          {'name': '苏州', 'value': 10},
-          {'name': '珠海', 'value': 2},
-          {'name': '厦门', 'value': 5},
-          {'name': '昆山', 'value': 5},
-          {'name': '东莞', 'value': 2},
-          {'name': '天津', 'value': 38},
-          {'name': '呼和浩特', 'value': 2},
-          {'name': '沈阳', 'value': 3},
-          {'name': '云南省', 'value': 1},
-          {'name': '烟台', 'value': 1}
-        ]
+      reData () {
         let _this = this
+        this.$axios({
+          methods: 'get',
+          url: 'http://localhost:9000/data/allGroupDatas'
+        }).then(function (response) {
+          // console.log(response.data)
+            _this.mapData = response.data
+            _this.chinaConfigure()
+          // console.log(_this.mapData)
+
+        })
+      },
+      chinaConfigure () {
+        // this.mapData = [
+        //   {'name': '昆明', 'value': 2},
+        //   {'name': '石家庄', 'value': 10},
+        //   {'name': '宁波', 'value': 13},
+        //   {'name': '运城', 'value': 3},
+        //   {'name': '西安', 'value': 29},
+        //   {'name': '登封市', 'value': 3},
+        //   {'name': '重庆', 'value': 3},
+        //   {'name': '长沙', 'value': 18},
+        //   {'name': '保定', 'value': 4},
+        //   {'name': '张家口', 'value': 3},
+        //   {'name': '桂林', 'value': 2},
+        //   {'name': '泉州', 'value': 6},
+        //   {'name': '秦皇岛', 'value': 2},
+        //   {'name': '广州', 'value': 23},
+        //   {'name': '济南', 'value': 10},
+        //   {'name': '许昌', 'value': 2},
+        //   {'name': '潍坊', 'value': 1},
+        //   {'name': '廊坊', 'value': 5},
+        //   {'name': '乌兰察布', 'value': 1},
+        //   {'name': '邯郸', 'value': 2},
+        //   {'name': '惠州', 'value': 2},
+        //   {'name': '哈尔滨', 'value': 3},
+        //   {'name': '大连', 'value': 56},
+        //   {'name': '开封', 'value': 1},
+        //   {'name': '北京', 'value': 11174},
+        //   {'name': '太原', 'value': 6},
+        //   {'name': '上海', 'value': 86},
+        //   {'name': '聊城', 'value': 1},
+        //   {'name': '平顶山', 'value': 4},
+        //   {'name': '杭州', 'value': 16},
+        //   {'name': '南京', 'value': 18},
+        //   {'name': '郑州', 'value': 2},
+        //   {'name': '深圳', 'value': 47},
+        //   {'name': '马鞍山', 'value': 1},
+        //   {'name': '南充', 'value': 2},
+        //   {'name': '唐山', 'value': 4},
+        //   {'name': '无锡', 'value': 8},
+        //   {'name': '郴州', 'value': 3},
+        //   {'name': '安阳', 'value': 1},
+        //   {'name': '锦州', 'value': 1},
+        //   {'name': '合肥', 'value': 9},
+        //   {'name': '武汉', 'value': 27},
+        //   {'name': '贵阳', 'value': 2},
+        //   {'name': '青岛', 'value': 7},
+        //   {'name': '成都', 'value': 32},
+        //   {'name': '柳州', 'value': 2},
+        //   {'name': '温州', 'value': 1},
+        //   {'name': '苏州', 'value': 10},
+        //   {'name': '珠海', 'value': 2},
+        //   {'name': '厦门', 'value': 5},
+        //   {'name': '昆山', 'value': 5},
+        //   {'name': '东莞', 'value': 2},
+        //   {'name': '天津', 'value': 38},
+        //   {'name': '呼和浩特', 'value': 2},
+        //   {'name': '沈阳', 'value': 3},
+        //   {'name': '云南省', 'value': 1},
+        //   {'name': '烟台', 'value': 1}
+        // ]
+
+        let _this = this
+        _this.mapData.sort(function (a,b) {
+          return b.value - a.value
+        })
         let myChart = this.$echarts.init(this.$refs.myEchart) //这里是为了获得容器所在位置
         let geoCoordMap = {}
         let mapName = 'china'
@@ -109,8 +131,10 @@
             }
           }
 
+          // console.log(res)
           return res
         }
+
         window.onresize = myChart.resize
         myChart.setOption({ // 进行相关配置
           backgroundColor: 'transparent',
@@ -128,6 +152,7 @@
               let index = params.dataIndex
               // console.log(_this.mapData)
               let name = params.name
+              // console.log(index,name)
               let tipHtml = ''
               tipHtml =
                 '<div style="width:280px;height:140px;background:rgba(22,80,158,0.8);border:1px solid rgba(7,166,255,0.7)">' +
@@ -138,34 +163,7 @@
                 '<i style="display:inline-block;width:10px;height:10px;background:#16d6ff;border-radius:40px;margin:0 8px">' +
                 '</i>' + '招聘总数：' + '<span style="color:#f48225;margin:0 6px;">' + _this.mapData[index].value +
                 '</span>' + '个' + '</p>'
-                // + '<p style="color:#fff;font-size:12px;">' +
-                // '<i style="display:inline-block;width:10px;height:10px;background:#16d6ff;border-radius:40px;margin:0 8px">' +
-                // '</i>' + '正常运行机器数：' + '<span style="color:#f48225;margin:0 6px;">' + _this.mapData[index].good +
-                // '</span>' +
-                // '个' + '</p>' + '<p style="color:#fff;font-size:12px;">' +
-                // '<i style="display:inline-block;width:10px;height:10px;background:#16d6ff;border-radius:40px;margin:0 8px">' +
-                // '</i>' + '待修机器数：' + '<span style="color:#f48225;margin:0 6px;">' + _this.mapData[index].bad +
-                // '</span>' +
-                // '个' + '</p>'
                 + '</div>' + '</div>'
-              // tipHtml =
-              //   '<div style="width:280px;height:200px;background:rgba(22,80,158,0.8);border:1px solid rgba(7,166,255,0.7)">' +
-              //   '<div style="width:100%;height:40px;line-height:40px;border-bottom:2px solid rgba(7,166,255,0.7);padding:0 20px">' +
-              //   '<i style="display:inline-block;width:8px;height:8px;background:#16d6ff;border-radius:40px;">' +
-              //   '</i>' + '<span style="margin-left:10px;color:#fff;font-size:16px;">' + name + '</span>' +
-              //   '</div>' + '<div style="padding:20px">' + '<p style="color:#fff;font-size:12px;">' +
-              //   '<i style="display:inline-block;width:10px;height:10px;background:#16d6ff;border-radius:40px;margin:0 8px">' +
-              //   '</i>' + '机器总数：' + '<span style="color:#f48225;margin:0 6px;">' + _this.mapData[index].count +
-              //   '</span>' +
-              //   '个' + '</p>' + '<p style="color:#fff;font-size:12px;">' +
-              //   '<i style="display:inline-block;width:10px;height:10px;background:#16d6ff;border-radius:40px;margin:0 8px">' +
-              //   '</i>' + '正常运行机器数：' + '<span style="color:#f48225;margin:0 6px;">' + _this.mapData[index].good +
-              //   '</span>' +
-              //   '个' + '</p>' + '<p style="color:#fff;font-size:12px;">' +
-              //   '<i style="display:inline-block;width:10px;height:10px;background:#16d6ff;border-radius:40px;margin:0 8px">' +
-              //   '</i>' + '待修机器数：' + '<span style="color:#f48225;margin:0 6px;">' + _this.mapData[index].bad +
-              //   '</span>' +
-              //   '个' + '</p>' + '</div>' + '</div>'
               return tipHtml
               // }
             }
@@ -203,7 +201,7 @@
             layoutSize: '180%',
             itemStyle: {
               normal: {
-                areaColor:'#0083ce',
+                areaColor: '#0083ce',
                 borderColor: '#0066ba' //省份边界颜色
               },
               emphasis: {
@@ -228,11 +226,13 @@
             hoverAnimation: true,
             symbolSize: function (data) {
               // console.log('data', data)
-              if (data[2] > 1000)
+              if (data[2] > 100) {
                 return 25
-              if (data[2] < 10)
+              }
+              if (data[2] < 20) {
                 return 5
-              return data[2]/4
+              }
+              return data[2] / 4
             },
             itemStyle: {
               normal: {
@@ -253,20 +253,19 @@
             name: '散点',
             type: 'effectScatter',
             coordinateSystem: 'geo',
-            data: convertData(this.mapData.sort(function (a, b) {
-              return b.value - a.value
-            }).slice(0, 3)),
+            data: convertData(this.mapData.slice(0, 4)),
             symbolSize: function (data) {
               // console.log('data', data)
-              if (data[2] > 1000)
+              if (data[2] > 120) {
                 return 30
-              return data[2]/4
+              }
+              return data[2] / 4
             },
             showEffectOn: 'render',
             rippleEffect: {
               //涟漪特效
               period: 3, //动画时间，值越小速度越快
-              brushType: "stroke", //波纹绘制方式 stroke, fill
+              brushType: 'stroke', //波纹绘制方式 stroke, fill
               scale: 4 //波纹圆环最大限制，值越大波纹越大
             },
             hoverAnimation: true,
@@ -919,7 +918,7 @@
 //       }
     },
     mounted () {
-      this.chinaConfigure()
+      this.reData()
       // this.drawCharts()
     }
   }
