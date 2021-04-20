@@ -24,6 +24,7 @@ import stuIntention from '../components/stuIntention'
 import mainBody from '../components/mainBody'
 import assessPro from '../components/assessPro'
 import jobUpload from '../components/jobDataUpload'
+import resumeDataUpload from "../components/resumeDataUpload";
 
 Vue.use(VueRouter)
 
@@ -53,6 +54,10 @@ const routes = [
       path: '/jobUpload',
       name: 'jobUpload',
       component: jobUpload
+    }, {
+      path: '/resumeDataUpload',
+      name: 'resumeDataUpload',
+      component: resumeDataUpload
     },
       {
         path: '/mainMap',
