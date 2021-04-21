@@ -30,7 +30,7 @@
                   <el-submenu index="2-4">
                     <template slot="title">招聘信息</template>
                     <el-menu-item index="2-4-1">andriod</el-menu-item>
-                    <el-menu-item index="2-4-2">c</el-menu-item>
+                    <el-menu-item index="2-4-2">测试工程师</el-menu-item>
                     <el-menu-item index="2-4-3">java</el-menu-item>
                     <el-menu-item index="2-4-4">python</el-menu-item>
                     <el-menu-item index="2-4-5">web</el-menu-item>
