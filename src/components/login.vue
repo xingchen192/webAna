@@ -19,7 +19,7 @@
 
 
             <el-button type="info" style="margin-right: 150px" @click="resetLoginForm">重置</el-button>
-            <el-button type="primary" @click="login">登录</el-button>
+            <el-button type="primary" @keyup.enter.native="login" @click="login"  >登录</el-button>
             <p style="text-align: right;margin-right: 30px;margin-top: 30px">
                 <router-link style="font-size: 2px" :to="{ path: 'logon' }">没有账号？点击这里注册</router-link>
             </p>
