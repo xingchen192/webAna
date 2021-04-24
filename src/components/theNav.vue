@@ -5,12 +5,12 @@
         <el-menu
             :default-active="activeIndex2"
             text-color="#409EFF"
-            active-text-color="#000EFF"
+            active-text-color="#000FFF"
             class="el-menu-demo"
             mode="horizontal"
             @select="handleSelect"
         >
-          <el-row>
+          <el-row :gutter="20">
             <el-col :span="12">
               <div style="text-align: left;margin-left: 30px" class="grid-content bg-purple">
                 <el-menu-item index="1">
@@ -28,7 +28,7 @@
                   <el-menu-item index="2-1">岗位分布</el-menu-item>
                   <el-menu-item index="2-2">薪资区间</el-menu-item>
                   <el-submenu index="2-4">
-                    <template slot="title">招聘信息</template>
+                    <template slot="title">招聘要求</template>
                     <el-menu-item index="2-4-1">andriod</el-menu-item>
                     <el-menu-item index="2-4-2">测试工程师</el-menu-item>
                     <el-menu-item index="2-4-3">java</el-menu-item>
@@ -236,6 +236,9 @@ export default {
 </script>
 
 <style scoped>
+  :focus{
+    outline: none;
+  }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

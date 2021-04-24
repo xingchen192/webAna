@@ -6,6 +6,7 @@
                   element-loading-spinner="el-icon-loading"
                   element-loading-background="rgba(0, 0, 0, 0.8)">
       <el-header style="width: auto;height: auto;margin-top: 10%">
+        <h2>简历数据上传</h2>
         <div>
 
           <el-upload
@@ -31,8 +32,8 @@
           :visible.sync="dialogVisible"
           width="40%"
           :before-close="handleClose">
-        <span style="margin-bottom: 10px" class="demonstration">自第二行开始，按照工作名称，地点，薪资，工作职责等格式排列</span>
-        <el-image src="/tip.png"></el-image>
+        <span style="margin-bottom: 10px" class="demonstration">自第二行开始，按照以下格式填写信息排列</span>
+        <el-image src="/resume.png"></el-image>
         <span slot="footer" class="dialog-footer">
                      <el-button @click="dialogVisible = false">取 消</el-button>
                         <el-button type="primary" @click="dialogVisible = false">确 定</el-button>

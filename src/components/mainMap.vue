@@ -110,26 +110,26 @@
         // ]
         let allmap = []
 
-        let year = []
+        let jobType = []
         let datas = []
         for (let i = 0, j = 0; i < allDs.length; i++) {
-          if (year.indexOf(allDs[i].jobName) === -1) {
-            year[j] = allDs[i].jobName
+          if (jobType.indexOf(allDs[i].jobName) === -1) {
+            jobType[j] = allDs[i].jobName
             j++
           }
           if (allmap.indexOf(allDs[i].name) === -1) {
             allmap.push(allDs[i].name)
           }
         }
-        // console.log(year)
+        // console.log(jobType)
         // console.log(allmap)
-        for (let i = 0; i < year.length; i++) {
+        for (let i = 0; i < jobType.length; i++) {
           datas[i] = {}
         }
         // console.log(allDs)
         for (let i = 0; i < allDs.length; i++) {
-          if (year.indexOf(allDs[i].jobName) !== -1) {
-            let index = year.indexOf(allDs[i].jobName)
+          if (jobType.indexOf(allDs[i].jobName) !== -1) {
+            let index = jobType.indexOf(allDs[i].jobName)
             // console.log(index)
             datas[index][allDs[i].name] = allDs[i].value
             // });
@@ -160,7 +160,7 @@
         ]
         var colorIndex = 0
         var mapData = []
-        for (let i = 0; i < year.length; i++) {
+        for (let i = 0; i < jobType.length; i++) {
           mapData[i] = []
         }
         $(function () {
@@ -181,7 +181,7 @@
             for (let i = 0; i < datas.length; i++) {
               if (datas[i][key] > 0) {
                 mapData[i].push({
-                  'year': 'android',
+                  'jobType': 'android',
                   'name': key,
                   'value': datas[i][key],
                 })
@@ -189,49 +189,49 @@
             }
             // if (d1[key] != null) {
             //   mapData[0].push({
-            //     'year': 'android',
+            //     'jobType': 'android',
             //     'name': key,
             //     'value': d1[key],
             //   })
             // }
             // if (d2[key] != null) {
             //   mapData[1].push({
-            //     'year': 'c',
+            //     'jobType': 'c',
             //     'name': key,
             //     'value': d2[key],
             //   })
             // }
             // if (d3[key] != null) {
             //   mapData[2].push({
-            //     'year': 'java',
+            //     'jobType': 'java',
             //     'name': key,
             //     'value': d3[key],
             //   })
             // }
             // if (d4[key] != null) {
             //   mapData[3].push({
-            //     'year': 'python',
+            //     'jobType': 'python',
             //     'name': key,
             //     'value': d4[key],
             //   })
             // }
             // if (d5[key] != null) {
             //   mapData[4].push({
-            //     'year': 'web',
+            //     'jobType': 'web',
             //     'name': key,
             //     'value': d5[key],
             //   })
             // }
             // if (d6[key] != null) {
             //   mapData[5].push({
-            //     'year': '测试',
+            //     'jobType': '测试',
             //     'name': key,
             //     'value': d6[key],
             //   })
             // }
             // if (d7[key] != null) {
             //   mapData[6].push({
-            //     'year': '网络工程师',
+            //     'jobType': '网络工程师',
             //     'name': key,
             //     'value': d7[key],
             //   })
@@ -284,7 +284,7 @@
 
             let optionXyMap01 = {
               timeline: {
-                data: year,
+                data: jobType,
                 axisType: 'category',
                 autoPlay: true,
                 playInterval: 3000,
@@ -393,7 +393,7 @@
 
             }
 
-            for (var n = 0; n < year.length; n++) {
+            for (var n = 0; n < jobType.length; n++) {
               optionXyMap01.options.push({
                 backgroundColor: '#013954',
                 title: [{
@@ -407,7 +407,7 @@
                 },
                   {
                     id: 'statistic',
-                    text: year[n] + '数据统计情况',
+                    text: jobType[n] + '数据统计情况',
                     left: '75%',
                     top: '5%',
                     textStyle: {

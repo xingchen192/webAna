@@ -6,6 +6,8 @@
                       element-loading-spinner="el-icon-loading"
                       element-loading-background="rgba(0, 0, 0, 0.8)">
             <el-header style="width: auto;height: auto;margin-top: 10%">
+                <h2>岗位数据上传</h2>
+
                 <div>
 
                     <el-upload
